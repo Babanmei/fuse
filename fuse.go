@@ -406,10 +406,12 @@ func ToErrno(err error) Errno {
 	if err, ok := err.(syscall.Errno); ok {
 		return Errno(err)
 	}
-	var errnum ErrorNumber
+	//var errnum ErrorNumber
+	/*
 	if errors.As(err, &errnum) {
 		return Errno(errnum.Errno())
 	}
+	*/
 	return DefaultErrno
 }
 
